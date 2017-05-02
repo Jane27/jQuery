@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery and Dom</title>
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+
+    <script>
+        function testing() {
+//          Dom object
+            var obj1=document.getElementById("test");
+            obj1.style.color='red';
+            window.alert("obj1' value is " + obj1.value);
+
+//          jQuery object
+            var $obj2=$('#test');
+            $obj2.val("hello").css('color','yellow');
+            alert($obj2.val());
+
+
+//          jquery obj->dom obj
+//          jquery is array
+            var  obj4=$obj2[0];
+            var obj5=$obj2.get(0);
+
+//            Dom to jquery
+//            input is array
+            var input=document.getElementsByTagName('input');
+
+            var $input=$(input); //jquery object
+            var $first=$input.first();//find the first input obj
+            $first.css('color', red);
+
+
+
+        }
+    </script>
+
+
+</head>
+<body>
+
+<input type="text" id="test" value="test">
+<input type="button" onclick="testing()" value="click">
+
+</body>
+</html>

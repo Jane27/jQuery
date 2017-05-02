@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Basic Selector</title>
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+<body>
+<input type="button" id="btn1" value="if id=one,backgroundcolor=#0000ff">
+<br/>
+<input type="button" id="btn2" value="if class= two, backgroundcolor = #ff0033">
+<br/>
+<input type="button" id="btn3" value="if tagname=div backgroundcolor = #00ffff">
+<br/>
+<input type="button" id="btn4" value="backgroundcolor=#00ff33">
+<br/>
+<input type="button" id="btn5" value="If tag= span and id =two backgroundcolor=#3399ff">
+<BR/>
+
+<div id="one" class="one">
+    <span>
+        id="one"
+        class="one"
+    </span>
+</div>
+<div id="two" class="two">
+    <span>
+        id="two"
+        class="two"
+    </span>
+</div>
+<div id="three" class="two">
+    <span>
+        id="three"
+        class="two"
+    </span>
+</div>
+<div id="four" class="one">
+    id="four"
+    class="one"
+</div>
+
+
+<div>
+    <p>Section 1</p>
+    <p>Section 2</p>
+    <p>Section 3</p>
+</div>
+
+
+
+
+
+
+
+<script>
+    $('#btn1').click(
+            function () {
+               $('#one').css("background","#0000ff") ;
+            }
+    );
+    $('#btn2').click(
+            function () {
+                $('.two').css("background","#ff0033");
+            }
+    );
+    $('#btn3').click(
+            function () {
+               $('div').css("background","#00ffff") ;
+
+            }
+    );
+    $('#btn4').click(
+            function () {
+                $('*').css("background","#00ff33") ;
+
+            }
+    );
+    $('#btn5').click(
+            function () {
+                $('span, #two').css("background","#3399ff") ;
+
+            }
+    );
+    $('p').click(
+           function () {
+               //this is a DOM object and current obj
+              // window.alert(this.innerHTML);
+               window.alert($(this).html());
+
+           }
+
+    )
+
+</script>
+</body>
+</html>

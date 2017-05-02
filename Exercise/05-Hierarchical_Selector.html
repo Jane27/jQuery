@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hierarchical Selector</title>
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+<body>
+<input type="button" id="btn1" value="if body, div backgroundcolor=#0000ff">
+<br/>
+<input type="button" id="btn2" value="if body modify sub-div backgroundcolor = #ff0033">
+<br/>
+<input type="button" id="btn3" value="if id=two the next div backgroundcolor = #00ffff">
+<br/>
+<input type="button" id="btn4" value="If id=two all the div after id=two backgroundcolor=#00ff33">
+<br/>
+<input type="button" id="btn5" value="If id=two it siblings   backgroundcolor=#3399ff">
+<BR/>
+<div id="one" >
+        id="one"
+</div>
+<div id="two">
+    id="two"
+    <div id="two01">
+        id="two01"
+    </div>
+    <div id="two02">
+        id="two02"
+    </div>
+
+    </div>
+</div>
+<div id="three">
+    <div id="thee01">
+    <span>
+        id="three01"
+    </span>
+        </div>
+</div>
+    <span class="one">
+    span="one"
+    </span>
+
+    <span class="two">
+    span="two"
+    </span>
+
+
+
+<script>
+    $('#btn1').click(
+            function () {
+                $('div').css("background","#0000ff") ;
+            }
+    );
+    //only change the first level div
+    $('#btn2').click(
+            function () {
+                $('body>div').css("background","#ff0033");
+            }
+    );
+    //div after id=one
+    $('#btn3').click(
+            function () {
+                $('#one + div').css("background","#00ffff") ;
+
+            }
+    );
+    $('#btn4').click(
+            function () {
+                $('#two ~ div').css("background","#00ff33") ;
+
+            }
+    );
+    $('#btn5').click(
+            function () {
+                $('#two').siblings("div").css("background","#3399ff") ;
+
+            }
+    );
+    $('p').click(
+            function () {
+                //this is a DOM object and current obj
+                // window.alert(this.innerHTML);
+                window.alert($(this).html());
+
+            }
+
+    )
+
+</script>
+</body>
+</html>
