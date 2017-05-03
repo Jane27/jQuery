@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Content Filter Selector</title>
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+    <style type="text/css">
+        div, span , #XXXX{
+            width: 100px;
+            height: 100px;
+            float: left;
+            padding: 5px;
+            margin: 5px;
+            background-color: #EEEEEE;
+        }
+        #two {
+            width: 100px;
+            height: 100%;
+            float: left;
+            padding: 5px;
+            margin: 5px;
+            background-color: #EEEEEE;
+        }
+        #one, #two01, #two02,#thee01 {
+            width: 80px;
+            height: 40px;
+            float: left;
+            padding: 5px;
+            margin: 5px;
+            background-color: #00ff55;
+        }
+    </style>
+</head>
+<body>
+
+
+<input type="button" id="btn1" value="if context have di, div backgroundcolor=#0000ff">
+<br/>
+<input type="button" id="btn2" value="if without element, div backgroundcolor = #ff00ff">
+<br/>
+<input type="button" id="btn3" value="if class=mini div backgroundcolor = #00ffff">
+<br/>
+<input type="button" id="btn4" value="If have child div backgroundcolor=#003300">
+<br/>
+<input type="button" id="btn5" value="If context without di, div backgroundcolor=#3399ff">
+<br/>
+<input type="button" id="btn6" value="If index>3 di, div backgroundcolor=#3300ff">
+<br/>
+
+<div id="XXXX">
+    <div id="one" class="mini" >
+     div id="one"
+    </div>
+</div>
+
+<div id="two">
+    div id="two"
+    <div id="two01" class="mini">
+        id="two01"
+    </div>
+    <div id="two02">
+        id="two02"
+    </div>
+</div>
+
+<div id="three" class="one">
+    div id="three"
+    class="one"
+    <div id="thee01">
+        id="three01"
+    </div>
+</div>
+
+<div id="four" class="one">
+    **********
+</div>
+
+<div id="five" class="one">
+</div>
+
+<div id="mover">
+    moving
+</div>
+<span id ='s_one' class="mini">
+    span="one"
+    </span>
+
+<span id ='s_two' class="mini">
+    span="two"
+    </span>
+<br/>
+
+
+
+
+
+
+<script>
+    $('#btn1').click(
+            function () {
+                $("div:contains('di')").css("background","#0000ff") ;
+            }
+    );
+    //without element
+    $('#btn2').click(
+            function () {
+                $("div:empty").css("background","#ff00ff");
+            }
+    );
+    //div after id=one
+    $('#btn3').click(
+            function () {
+                //element-self
+              //  $('div.mini').css("background","#00ffff") ;
+                //element-parent
+                $('div:has(.mini)').css("background","#00ffff");
+
+
+            }
+    );
+    $('#btn4').click(
+            function () {
+                $('div:parent').css("background","#003300") ;
+
+            }
+    );
+    $('#btn5').click(
+            function () {
+                $("div:not(:contains('di'))").css("background","#3399ff") ;
+
+            }
+    );
+    $('#btn6').click(
+            function () {
+                $('div:gt(3)').css("background","#3399ff") ;
+
+            }
+    );
+    $('#btn7').click(
+            function () {
+                $('div:eq(3)').css("background","#3399ff") ;
+
+            }
+    );
+    $('#btn8').click(
+            function () {
+                $('div:lt(3)').css("background","#3399ff") ;
+
+            }
+    );
+    $('#btn9').click(
+            function () {
+                $(':header').css("background","#3399ff") ;
+
+            }
+    );
+    $('#btn10').click(
+            function () {
+                $(':animated').css("background","#3399ff") ;
+
+            }
+    );
+
+
+</script>
+</body>
+</html>

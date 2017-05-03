@@ -4,7 +4,38 @@
     <meta charset="UTF-8">
     <title>Basic Filter Selector</title>
     <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
-    <link rel="stylesheet" href="../css/style.css">
+    <style type="text/css">
+        div, span {
+            width: 100px;
+            height: 100px;
+            float: left;
+            padding: 5px;
+            margin: 5px;
+            background-color: #EEEEEE;
+        }
+        #two {
+            width: 100px;
+            height: 100%;
+            float: left;
+            padding: 5px;
+            margin: 5px;
+            background-color: #EEEEEE;
+        }
+        #two01, #two02,#thee01 {
+            width: 80px;
+            height: 40px;
+            float: left;
+            padding: 5px;
+            margin: 5px;
+            background-color: #00ff55;
+        }
+        table {
+        border:solid 3px #888;
+        width: 400px;
+        }
+
+
+    </style>
 </head>
 <body>
 
@@ -43,14 +74,13 @@
     </div>
 
 </div>
-</div>
 <div id="three" class="one">
     <div id="thee01">
         id="three01"
         class="one"
     </div>
 </div>
-<div id="four">
+<div id="mover">
     animation
 </div>
 <span class="one">
@@ -62,10 +92,16 @@
     </span>
 <br/>
 
-<h1>hello</h1>
-<h2>Cool</h2>
-<h3>Well</h3>
-<br/>
+
+
+
+    <h1>hello</h1>
+    <h2>Cool</h2>
+    <h3>Well</h3>
+
+
+
+
 <table >
     <tr>
         <td>one</td><td>one</td>
@@ -87,6 +123,7 @@
 </table>
 
 
+<br/>
 
 
 <script>
@@ -153,7 +190,7 @@
     );
 
             function ca() {
-                $('#four').slideToggle("fast", ca);
+                $('#mover').slideToggle("fast", ca);
             }
     ca();
 

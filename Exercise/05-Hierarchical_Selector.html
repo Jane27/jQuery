@@ -4,7 +4,34 @@
     <meta charset="UTF-8">
     <title>Hierarchical Selector</title>
     <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
-    <link rel="stylesheet" href="../css/style.css">
+    <style type="text/css">
+        div, span {
+        width: 100px;
+        height: 100px;
+        float: left;
+        padding: 5px;
+        margin: 5px;
+        background-color: #EEEEEE;
+        }
+        #two {
+        width: 100px;
+        height: 100%;
+        float: left;
+        padding: 5px;
+        margin: 5px;
+        background-color: #EEEEEE;
+        }
+        #two01, #two02,#thee01 {
+        width: 80px;
+        height: 40px;
+        float: left;
+        padding: 5px;
+        margin: 5px;
+        background-color: #00ff55;
+        }
+
+
+    </style>
 
 </head>
 <body>
@@ -18,6 +45,8 @@
 <br/>
 <input type="button" id="btn5" value="If id=two it siblings   backgroundcolor=#3399ff">
 <BR/>
+
+
 <div id="one" >
         id="one"
 </div>
@@ -30,13 +59,10 @@
         id="two02"
     </div>
 
-    </div>
 </div>
 <div id="three">
     <div id="thee01">
-    <span>
         id="three01"
-    </span>
         </div>
 </div>
     <span class="one">
@@ -80,15 +106,6 @@
 
             }
     );
-    $('p').click(
-            function () {
-                //this is a DOM object and current obj
-                // window.alert(this.innerHTML);
-                window.alert($(this).html());
-
-            }
-
-    )
 
 </script>
 </body>

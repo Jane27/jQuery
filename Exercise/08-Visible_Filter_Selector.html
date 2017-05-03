@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Visible Filter Selector</title>
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+    <style type="text/css">
+        div{
+            width: 100px;
+            height: 100%;
+            float: left;
+            padding: 5px;
+            margin: 5px;
+            background-color: #EEEEEE
+        }
+        div.visible{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+
+<input type="button" id="btn1" value="change all the visible div backgroundcolor=#0000ff">
+<br/>
+<input type="button" id="btn2" value="select all the invisible element,show them and div backgroundcolor = #ff00ff">
+<br/>
+<input type="button" id="btn3" value="select all the invisible text and print them">
+<br/>
+
+<input type="hidden" value="hidden1"/>
+<br/>
+<input type="hidden" value="hidden2"/>
+<br/>
+<input type="hidden" value="hidden3"/>
+<br/>
+<input type="hidden" value="hidden4"/>
+<br/>
+
+    <div id="one" class="visible" >
+     div id="one"
+    </div>
+
+<div id="two" class="visible">
+    aaaaaaaaaaa
+</div>
+
+<div id="three" class="one">
+********
+</div>
+
+<br/>
+
+<p>
+    Basketball <input type="checkbox" name="hobby" value="Basketball" >
+    Volleyball <input type="checkbox" name="hobby" value="Volleyball">
+    TableTennis <input type="checkbox" name="hobby" value="TableTennis">
+    Badminton <input type="checkbox" name="hobby" value="Badminton">
+</p>
+
+
+
+
+<script>
+    $('#btn1').click(
+            function () {
+                $("div:visible").css("background","#0000ff") ;
+            }
+    );
+    //without element
+    $('#btn2').click(
+            function () {
+                $("div:hidden").css("background","#ff00ff");
+                $("div:hidden").show();
+            }
+    );
+//"
+    //
+    $('#btn3').click(
+            function () {
+                //element-self
+              //  $('div.mini').css("background","#00ffff") ;
+                //element-parent
+                $objs=$('input:hidden');
+                alert($objs.length);
+                $.each($objs, function (i,obj) {
+//                    window.alert("jQuery " + $(obj).val());
+                    window.alert("Dom "+ this.value);
+                    window.alert("jQuery2 "+$(this).val())
+                });
+            }
+    );
+    $('input').click(
+            function select() {
+                $objs=$('input[type=checkbox]:checked');
+                $.each($objs, function () {
+                window.alert("Your hobby is " + $(this).val());
+
+     });
+     
+ });
+
+
+</script>
+</body>
+</html>
