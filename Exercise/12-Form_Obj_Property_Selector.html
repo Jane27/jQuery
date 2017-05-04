@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Obj Selector</title>
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+<input type="button" id="btn1" value="modify the value of input: type=text and available, using val()"/>
+<br/>
+<input type="button" id="btn2" value="modify the value of input: type=text and unavailable, using val()"/>
+<br/>
+<input type="button" id="btn3" value="get the number of checkbox has been selected, using length">
+<br/>
+<input type="button" id="btn4" value="get the content of selector, using text">
+<br/>
+
+<form>
+    <input type="text" value="basketball_1"/>
+    <input type="text" value="basketball_2"/>
+    <input type="text" value="basketball_3" disabled="true"/>
+    <input type="text" value="basketball_4" disabled="true"/>
+    <br/>
+    <input type="checkbox" value="hobby_1">hobby_1
+    <input type="checkbox" value="hobby_2">hobby_2
+    <input type="checkbox" value="hobby_3">hobby_3
+    <input type="checkbox" value="hobby_4">hobby_4
+
+    <br/>
+
+    <select id="hsp" name="edu">
+        <option value="primary">primary</option>
+        <option value="second">second</option>
+        <option value="high">high</option>
+        <option value="bachelor">bachelor</option>
+        <option value="master">master</option>
+        <option value="Doctor">doctor</option>
+    </select>
+    <br/>
+    <select name="job" multiple="multiple">
+       <option value="option_1">option_1~~</option>
+        <option value="option_2">option_2~~</option>
+        <option value="option_3">option_3~~</option>
+        <option value="option_4">option_4~~</option>
+        <option value="option_5">option_5~~</option>
+        <option value="option_6">option_6~~</option>
+
+    </select> <br/>
+</form>
+</body>
+<script>
+    $('#btn1').click(
+            function () {
+                $("input[type='text']:enabled").val("hello") ;
+            }
+    );
+    $('#btn2').click(
+            function () {
+                $("input[type='text']:disabled").val("world");
+            }
+    );
+    //div after id=one
+    $('#btn3').click(
+            function () {
+               var checkbox1= $('input[type="checkbox"]:checked').length ;
+                alert("checkbox1:"+checkbox1);
+                var checkbox2=$(':checkbox:checked').length;
+                alert("checkbox2:"+checkbox2);
+
+            }
+    );
+    $('#btn4').click(
+            function () {
+                //get all the element
+               var text= $('select option:selected').text() ;
+                alert(text);
+                //val()--get the first element
+
+                var $objs=$('select option:selected');
+//                $.each($objs,function () {
+//                   alert( $(this).val());
+//                });
+//                $.each($objs,function (i,n) {
+//                    alert(n.value);
+//                  alert($(n).val());
+//                });
+//                $objs.each(function () {
+//                    alert( $(this).val());
+//                });
+                $objs.each(function (i,n ) {
+                    alert( $(n).val());
+                })
+
+            }
+    );
+    $('#btn5').click(
+            function () {
+                $('div:odd').css("background","#3399ff") ;
+
+            }
+    );
+    $('#btn6').click(
+            function () {
+                $('div:gt(3)').css("background","#3399ff") ;
+
+            }
+    );
+
+</script>
+
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Obj Selector</title>
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+<form>
+    <input type="text"/> <br/>
+    <input type="checkbox"/><br/>
+    <input type="radio"/> <br/>
+    <input type="image"/> <br/>
+    <input type="file"/> <br/>
+    <input type="submit"/> <br/>
+    <input type="reset"/> <br/>
+    <input type="password"/><br/>
+    <input type="button" value="Button 1"/> <br/>
+    <select>
+        <option/>
+    </select>
+    <br/>
+    <textarea></textarea> <br/>
+    <button>Button 2 </button> <br/>
+</form>
+</body>
+<script>
+    //select all button
+    var button1=$(':button');
+    window.alert("button1:"+button1.length);
+
+    //it only find the type =button
+    var button2=$("input[type='button']");
+    window.alert("button2:"+button2.length);
+
+
+
+
+
+</script>
+
+
+</html>

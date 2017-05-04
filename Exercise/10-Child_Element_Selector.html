@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Child Element Selector</title>
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+    <style type="text/css">
+        div {
+            width: 100px;
+            height: 100%;
+            float: left;
+            padding: 5px;
+            margin: 5px;
+            background-color: #EEEEEE;
+        }
+        /*#two {*/
+            /*width: 100px;*/
+            /*height: 100%;*/
+            /*float: left;*/
+            /*padding: 5px;*/
+            /*margin: 5px;*/
+            /*background-color: #EEEEEE;}*/
+        #one,#two,#three,#four  {
+            width: 80px;
+            height: 40px;
+            float: left;
+            padding: 5px;
+            margin: 5px;
+            background-color: #00ff55;
+        }
+
+    </style>
+</head>
+<body>
+
+
+<input type="button" id="btn1" value="div:class=one and the second child backgroundcolor=#0000ff">
+<br/>
+<input type="button" id="btn2" value="div:class=one and the first child backgroundcolor = #ff00ff">
+<br/>
+<input type="button" id="btn3" value="div:class=one and the last child backgroundcolor = #00ffff">
+<br/>
+<input type="button" id="btn4" value="div:class=one and only one child backgroundcolor=#003300">
+<br/>
+
+
+<div class="one" >
+
+    <div id="one" class="one" >
+      XXXXX one
+    </div>
+
+    <div id="two" class="one">
+        XXXXX two
+    </div>
+    <div id="three" class="one">
+        XXXXX three
+    </div>
+    <div id="four" class="one">
+        XXXXX four
+    </div>
+</div>
+<div class="one">
+    <div id="one" class="one">
+        XXXX one
+    </div>
+</div>
+<br/>
+
+
+
+
+<script>
+    $('#btn1').click(
+            function () {
+                $("div .one:nth-child(2)").css("background","#0000ff") ;
+            }
+    );
+    //without element
+    $('#btn2').click(
+            function () {
+               // $("div .one:nth-child(1)").css("background","#ff00ff");
+                $("div .one:first-child").css("background","#ff00ff");
+            }
+    );
+
+    $('#btn3').click(
+            function () {
+                $("div .one:last-child").css("background","#00ffff") ;
+            }
+    );
+    $('#btn4').click(
+            function () {
+                $("div .one:only-child").css("background","#003300") ;
+            }
+    );
+
+
+</script>
+</body>
+</html>
